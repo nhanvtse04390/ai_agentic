@@ -61,7 +61,15 @@ export async function sendPrompt({ role, prompt, context = {}, useCache = true }
   }
 
   try {
-    const response = await fetch('/api/ai', {
+    // Lấy API base URL từ environment variable, fallback về relative path
+    const apiBaseUrl = import.meta.env.VITE_API_BASE_URL || '';
+    const apiUrl = apiBaseUrl ? `${apiBaseUrl}/api/ai` : '/api/ai';
+    
+    // Debug: log URL đang gọi
+    console.log('🔗 Calling API URL:', apiUrl);
+    console.log('🔗 VITE_API_BASE_URL:', import.meta.env.VITE_API_BASE_URL);
+    
+    const response = await fetch(apiUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -78,7 +86,26 @@ export async function sendPrompt({ role, prompt, context = {}, useCache = true }
     }
 
     const data = await response.json();
+    
+    // Log response để debug
+    console.log('API Response:', data);
+    
+    // Kiểm tra nếu có lỗi từ backend
+    if (data.error) {
+      const errorMsg = data.message || data.error || 'Backend error';
+      console.error('Backend error:', errorMsg);
+      throw new Error(errorMsg);
+    }
+    
     const result = data.content || data.message || '';
+    
+    // Nếu result rỗng, throw error
+    if (!result || result.trim().length === 0) {
+      console.error('Empty response from API. Data received:', data);
+      throw new Error('Empty response from API');
+    }
+    
+    console.log('API Response content:', result.substring(0, 200));
 
     // Lưu vào cache nếu enable
     if (useCache && result) {

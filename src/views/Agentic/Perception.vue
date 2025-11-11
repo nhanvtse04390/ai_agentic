@@ -170,20 +170,45 @@ Chỉ trả về JSON, không có text khác.`;
     });
 
     addLog('success', 'Nhận được response từ AI');
+    
+    // Log response để debug
+    console.log('Response từ AI:', response);
+    console.log('Response type:', typeof response);
+    console.log('Response length:', response?.length);
+
+    // Kiểm tra nếu response rỗng
+    if (!response || typeof response !== 'string' || response.trim().length === 0) {
+      throw new Error('Response rỗng từ AI');
+    }
 
     // Parse JSON response
     try {
+      // Thử parse trực tiếp
       const parsed = JSON.parse(response);
       analysisResult.value = parsed;
       addLog('success', 'Phân tích thành công');
     } catch (e) {
-      // Nếu không parse được, thử extract JSON
-      const jsonMatch = response.match(/\{[\s\S]*\}/);
+      console.warn('Parse JSON trực tiếp thất bại, thử extract JSON:', e.message);
+      
+      // Nếu không parse được, thử extract JSON từ text
+      // Loại bỏ markdown code blocks nếu có
+      let cleanedResponse = response
+        .replace(/```json\s*/g, '')
+        .replace(/```\s*/g, '')
+        .trim();
+      
+      const jsonMatch = cleanedResponse.match(/\{[\s\S]*\}/);
       if (jsonMatch) {
-        analysisResult.value = JSON.parse(jsonMatch[0]);
-        addLog('success', 'Phân tích thành công (extracted JSON)');
+        try {
+          analysisResult.value = JSON.parse(jsonMatch[0]);
+          addLog('success', 'Phân tích thành công (extracted JSON)');
+        } catch (parseError) {
+          console.error('Parse extracted JSON thất bại:', parseError);
+          throw new Error(`Không thể parse response: ${parseError.message}. Response: ${response.substring(0, 200)}`);
+        }
       } else {
-        throw new Error('Không thể parse response');
+        console.error('Không tìm thấy JSON trong response:', response);
+        throw new Error(`Không thể parse response: Không tìm thấy JSON. Response: ${response.substring(0, 200)}`);
       }
     }
   } catch (error) {
