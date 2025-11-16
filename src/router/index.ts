@@ -48,6 +48,12 @@ const router = createRouter({
       component: () => import('../views/Agentic/Collaboration.vue'),
       meta: { title: 'Collaboration Demo' },
     },
+    {
+      path: '/agentic/prompt-engineering',
+      name: 'PromptEngineering',
+      component: () => import('../views/Agentic/PromptEngineering.vue'),
+      meta: { title: 'Prompt Engineering Guide' },
+    },
   ],
 });
 

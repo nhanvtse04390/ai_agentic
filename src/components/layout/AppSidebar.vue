@@ -202,6 +202,7 @@
             { name: 'Tool Use', path: '/agentic/tool-use', pro: false },
             { name: 'Memory', path: '/agentic/memory', pro: false },
             { name: 'Collaboration', path: '/agentic/collaboration', pro: false },
+            { name: 'Prompt Engineering', path: '/agentic/prompt-engineering', pro: false },
           ],
         },
       ],

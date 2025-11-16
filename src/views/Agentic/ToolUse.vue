@@ -12,12 +12,19 @@
           <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-3 animate-pulse">
             🔧 Tool Use: AI chọn tool, FE khiến nó đẹp và dễ dùng
           </h2>
-          <img 
-            src="https://i.imgflip.com/8zwv5a.jpg" 
-            alt="meme tool use" 
-            class="mx-auto rounded-xl w-80 max-w-full my-4 shadow-lg"
-            loading="lazy"
-          />
+          <div class="mx-auto w-80 max-w-full my-4">
+            <div class="bg-gradient-to-br from-purple-100 to-pink-100 dark:from-purple-900 dark:to-pink-900 rounded-xl p-6 shadow-lg border-2 border-purple-300 dark:border-purple-700">
+              <div class="text-center">
+                <div class="text-6xl mb-4">🔧🎨</div>
+                <div class="text-lg font-bold text-gray-800 dark:text-gray-200 mb-2">
+                  AI: "Tôi chọn được tool!"
+                </div>
+                <div class="text-base text-gray-600 dark:text-gray-400">
+                  Frontend: "Nhưng tôi mới làm cho nó đẹp và dễ dùng! ✨"
+                </div>
+              </div>
+            </div>
+          </div>
           <p class="text-lg text-gray-700 dark:text-gray-300 mt-4 max-w-3xl mx-auto">
             AI có thể chọn tool và arguments. Nhưng <span class="font-bold text-purple-600 dark:text-purple-400">Frontend Developer</span> mới là người quyết định tool đó được hiển thị như thế nào: loading state, error handling, success animation, và cách integrate vào flow của user. 🎨
           </p>
@@ -37,6 +44,330 @@
         </aside>
       </section>
       <!-- 🟡 Seminar Presentation Section End -->
+
+      <!-- 🔄 Comparison Section: AI without UI vs AI with UI -->
+      <section class="mb-8 bg-gradient-to-r from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-700 rounded-xl p-6 border-2 border-gray-300 dark:border-gray-600">
+        <h2 class="text-2xl font-bold text-center text-gray-900 dark:text-white mb-6">
+          ⚖️ So sánh: AI không có UI vs AI có UI
+        </h2>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <!-- AI không có UI -->
+          <div class="bg-red-50 dark:bg-red-900/20 rounded-lg p-6 border-2 border-red-300 dark:border-red-700">
+            <div class="flex items-center gap-2 mb-4">
+              <span class="text-2xl">❌</span>
+              <h3 class="text-xl font-bold text-red-700 dark:text-red-400">AI không có UI</h3>
+            </div>
+            <div class="bg-white dark:bg-gray-900 rounded p-4 font-mono text-sm mb-4 border border-red-200 dark:border-red-800">
+              <div class="text-gray-500 mb-2">// Raw tool execution</div>
+              <div class="text-gray-800 dark:text-gray-300">
+                {<br>
+                &nbsp;&nbsp;"tool": "calculator",<br>
+                &nbsp;&nbsp;"args": {"operation": "add", "a": 15, "b": 27},<br>
+                &nbsp;&nbsp;"result": 42<br>
+                }
+              </div>
+            </div>
+            <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+              <li class="flex items-start gap-2">
+                <span class="text-red-500">✗</span>
+                <span>Chỉ có JSON response, không có visual</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-red-500">✗</span>
+                <span>Không có loading state, không biết đang chạy</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-red-500">✗</span>
+                <span>Error handling khó hiểu, chỉ có text</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-red-500">✗</span>
+                <span>Không có feedback, user không biết tool đã chạy chưa</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- AI có UI (Frontend) -->
+          <div class="bg-green-50 dark:bg-green-900/20 rounded-lg p-6 border-2 border-green-300 dark:border-green-700">
+            <div class="flex items-center gap-2 mb-4">
+              <span class="text-2xl">✅</span>
+              <h3 class="text-xl font-bold text-green-700 dark:text-green-400">AI có UI (Frontend)</h3>
+            </div>
+            <div class="bg-white dark:bg-gray-900 rounded-lg p-4 mb-4 border border-green-200 dark:border-green-800">
+              <div class="space-y-3">
+                <div class="p-3 bg-purple-50 dark:bg-purple-900/30 rounded-lg">
+                  <div class="text-xs font-medium text-purple-600 dark:text-purple-400 mb-1">Tool được chọn</div>
+                  <div class="flex items-center gap-2">
+                    <span class="text-2xl">🔧</span>
+                    <span class="font-bold text-purple-700 dark:text-purple-300">Calculator</span>
+                  </div>
+                </div>
+                <div class="p-3 bg-blue-50 dark:bg-blue-900/30 rounded-lg">
+                  <div class="text-xs font-medium text-blue-600 dark:text-blue-400 mb-1">Kết quả</div>
+                  <div class="text-2xl font-bold text-blue-700 dark:text-blue-300">42</div>
+                  <div class="text-xs text-gray-500 mt-1">15 + 27 = 42</div>
+                </div>
+                <div class="flex items-center gap-2 text-xs text-green-600 dark:text-green-400">
+                  <span>✓</span>
+                  <span>Thực thi thành công</span>
+                </div>
+              </div>
+            </div>
+            <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+              <li class="flex items-start gap-2">
+                <span class="text-green-500">✓</span>
+                <span>Visual cards với icons và colors</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-green-500">✓</span>
+                <span>Loading spinner, progress indicator</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-green-500">✓</span>
+                <span>Error messages đẹp với icons và suggestions</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-green-500">✓</span>
+                <span>Success animations, visual feedback rõ ràng</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="mt-6 p-4 bg-purple-50 dark:bg-purple-900/20 rounded-lg border-l-4 border-purple-500">
+          <p class="text-sm text-gray-700 dark:text-gray-300">
+            <strong class="text-purple-700 dark:text-purple-400">💡 Kết luận:</strong> 
+            Cùng một tool execution từ AI, nhưng Frontend Developer biến nó thành UI đẹp mắt với loading states, 
+            error handling thân thiện, và success animations. Đây chính là giá trị mà Frontend mang lại!
+          </p>
+        </div>
+      </section>
+
+      <!-- 📚 Lý thuyết chi tiết về Tool Use -->
+      <section class="mb-8 bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8">
+        <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-3">
+          <span class="text-4xl">📚</span>
+          <span>Lý thuyết về Tool Use Layer</span>
+        </h2>
+
+        <div class="space-y-6">
+          <!-- Khái niệm -->
+          <div class="bg-purple-50 dark:bg-purple-900/20 rounded-lg p-6 border-l-4 border-purple-500">
+            <h3 class="text-xl font-semibold text-purple-900 dark:text-purple-300 mb-3">
+              🎯 Khái niệm Tool Use Layer
+            </h3>
+            <p class="text-gray-700 dark:text-gray-300 mb-4">
+              <strong>Tool Use Layer</strong> là khả năng của AI để chọn và sử dụng các tools/functions để thực hiện tasks cụ thể:
+            </p>
+            <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300 ml-4">
+              <li><strong>Tool Selection:</strong> AI phân tích request và chọn tool phù hợp nhất</li>
+              <li><strong>Parameter Extraction:</strong> AI extract arguments cần thiết từ user input</li>
+              <li><strong>Tool Execution:</strong> Frontend thực thi tool với arguments đã được parse</li>
+              <li><strong>Result Presentation:</strong> Frontend hiển thị kết quả một cách dễ hiểu và đẹp mắt</li>
+            </ul>
+          </div>
+
+          <!-- Cách hoạt động -->
+          <div class="bg-pink-50 dark:bg-pink-900/20 rounded-lg p-6 border-l-4 border-pink-500">
+            <h3 class="text-xl font-semibold text-pink-900 dark:text-pink-300 mb-3">
+              ⚙️ Cách hoạt động
+            </h3>
+            <div class="space-y-4">
+              <div class="bg-white dark:bg-gray-900 rounded p-4">
+                <div class="font-semibold text-gray-900 dark:text-white mb-2">1. Tool Registry</div>
+                <p class="text-sm text-gray-700 dark:text-gray-300">
+                  Frontend định nghĩa available tools với descriptions và parameter schemas.
+                </p>
+              </div>
+              <div class="bg-white dark:bg-gray-900 rounded p-4">
+                <div class="font-semibold text-gray-900 dark:text-white mb-2">2. Intent Analysis</div>
+                <p class="text-sm text-gray-700 dark:text-gray-300">
+                  AI phân tích user request và match với tool phù hợp nhất.
+                </p>
+              </div>
+              <div class="bg-white dark:bg-gray-900 rounded p-4">
+                <div class="font-semibold text-gray-900 dark:text-white mb-2">3. Parameter Parsing</div>
+                <p class="text-sm text-gray-700 dark:text-gray-300">
+                  AI extract và validate parameters từ natural language input.
+                </p>
+              </div>
+              <div class="bg-white dark:bg-gray-900 rounded p-4">
+                <div class="font-semibold text-gray-900 dark:text-white mb-2">4. Execution & Feedback</div>
+                <p class="text-sm text-gray-700 dark:text-gray-300">
+                  Frontend execute tool, handle errors, và hiển thị kết quả với UX tốt.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Ứng dụng thực tế -->
+          <div class="bg-indigo-50 dark:bg-indigo-900/20 rounded-lg p-6 border-l-4 border-indigo-500">
+            <h3 class="text-xl font-semibold text-indigo-900 dark:text-indigo-300 mb-3">
+              💡 Ứng dụng thực tế
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="bg-white dark:bg-gray-900 rounded p-4">
+                <div class="font-semibold text-indigo-700 dark:text-indigo-400 mb-2">Calculator Tools</div>
+                <p class="text-sm text-gray-700 dark:text-gray-300">
+                  "Tính 15 + 27" → AI chọn calculator tool với args: {operation: "add", a: 15, b: 27}
+                </p>
+              </div>
+              <div class="bg-white dark:bg-gray-900 rounded p-4">
+                <div class="font-semibold text-indigo-700 dark:text-indigo-400 mb-2">API Calls</div>
+                <p class="text-sm text-gray-700 dark:text-gray-300">
+                  "Lấy thông tin user" → AI chọn fetchData tool với endpoint và params
+                </p>
+              </div>
+              <div class="bg-white dark:bg-gray-900 rounded p-4">
+                <div class="font-semibold text-indigo-700 dark:text-indigo-400 mb-2">Data Visualization</div>
+                <p class="text-sm text-gray-700 dark:text-gray-300">
+                  "Vẽ biểu đồ doanh thu" → AI chọn chart tool với type, data, và styling
+                </p>
+              </div>
+              <div class="bg-white dark:bg-gray-900 rounded p-4">
+                <div class="font-semibold text-indigo-700 dark:text-indigo-400 mb-2">File Operations</div>
+                <p class="text-sm text-gray-700 dark:text-gray-300">
+                  "Export data ra CSV" → AI chọn export tool với format và data source
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 🎬 Kịch bản Test cụ thể -->
+      <section class="mb-8 bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 rounded-xl p-8 border-2 border-purple-200 dark:border-purple-800">
+        <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-3">
+          <span class="text-4xl">🎬</span>
+          <span>Kịch bản Test cụ thể</span>
+        </h2>
+
+        <div class="space-y-6">
+          <!-- Test Case 1 -->
+          <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow">
+            <div class="flex items-start gap-4 mb-4">
+              <div class="flex-shrink-0 w-10 h-10 bg-purple-500 text-white rounded-full flex items-center justify-center font-bold">
+                1
+              </div>
+              <div class="flex-1">
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                  Test Case 1: Calculator Tool
+                </h3>
+                <div class="space-y-3">
+                  <div>
+                    <div class="font-medium text-gray-700 dark:text-gray-300 mb-1">Input Request:</div>
+                    <div class="bg-gray-100 dark:bg-gray-700 rounded p-3 font-mono text-sm">
+                      "Tính 125 nhân 8 rồi cộng thêm 50"
+                    </div>
+                  </div>
+                  <div>
+                    <div class="font-medium text-gray-700 dark:text-gray-300 mb-1">AI Selection mong đợi:</div>
+                    <div class="bg-purple-50 dark:bg-purple-900/20 rounded p-3 text-sm">
+                      <ul class="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-300">
+                        <li><strong>Tool:</strong> calculator</li>
+                        <li><strong>Operation 1:</strong> multiply (125 * 8 = 1000)</li>
+                        <li><strong>Operation 2:</strong> add (1000 + 50 = 1050)</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="font-medium text-gray-700 dark:text-gray-300 mb-1">UI Response nên có:</div>
+                    <div class="bg-blue-50 dark:bg-blue-900/20 rounded p-3 text-sm text-gray-700 dark:text-gray-300">
+                      - Calculator icon và visual feedback<br>
+                      - Step-by-step calculation display<br>
+                      - Final result highlighted (1050)<br>
+                      - Success animation khi hoàn thành
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Test Case 2 -->
+          <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow">
+            <div class="flex items-start gap-4 mb-4">
+              <div class="flex-shrink-0 w-10 h-10 bg-pink-500 text-white rounded-full flex items-center justify-center font-bold">
+                2
+              </div>
+              <div class="flex-1">
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                  Test Case 2: Data Fetching Tool
+                </h3>
+                <div class="space-y-3">
+                  <div>
+                    <div class="font-medium text-gray-700 dark:text-gray-300 mb-1">Input Request:</div>
+                    <div class="bg-gray-100 dark:bg-gray-700 rounded p-3 font-mono text-sm">
+                      "Lấy danh sách 10 sản phẩm bán chạy nhất"
+                    </div>
+                  </div>
+                  <div>
+                    <div class="font-medium text-gray-700 dark:text-gray-300 mb-1">AI Selection mong đợi:</div>
+                    <div class="bg-pink-50 dark:bg-pink-900/20 rounded p-3 text-sm">
+                      <ul class="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-300">
+                        <li><strong>Tool:</strong> fetchMockData</li>
+                        <li><strong>Type:</strong> products</li>
+                        <li><strong>Count:</strong> 10</li>
+                        <li><strong>Filter:</strong> top-selling</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="font-medium text-gray-700 dark:text-gray-300 mb-1">UI Response nên có:</div>
+                    <div class="bg-blue-50 dark:bg-blue-900/20 rounded p-3 text-sm text-gray-700 dark:text-gray-300">
+                      - Loading spinner trong khi fetch<br>
+                      - Product cards grid layout<br>
+                      - Empty state nếu không có data<br>
+                      - Error message nếu API fail
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Test Case 3 -->
+          <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow">
+            <div class="flex items-start gap-4 mb-4">
+              <div class="flex-shrink-0 w-10 h-10 bg-indigo-500 text-white rounded-full flex items-center justify-center font-bold">
+                3
+              </div>
+              <div class="flex-1">
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                  Test Case 3: Chart Generation Tool
+                </h3>
+                <div class="space-y-3">
+                  <div>
+                    <div class="font-medium text-gray-700 dark:text-gray-300 mb-1">Input Request:</div>
+                    <div class="bg-gray-100 dark:bg-gray-700 rounded p-3 font-mono text-sm">
+                      "Vẽ biểu đồ đường thể hiện doanh thu theo tháng"
+                    </div>
+                  </div>
+                  <div>
+                    <div class="font-medium text-gray-700 dark:text-gray-300 mb-1">AI Selection mong đợi:</div>
+                    <div class="bg-indigo-50 dark:bg-indigo-900/20 rounded p-3 text-sm">
+                      <ul class="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-300">
+                        <li><strong>Tool:</strong> generateChart</li>
+                        <li><strong>Type:</strong> line</li>
+                        <li><strong>Data Points:</strong> 12 (12 tháng)</li>
+                        <li><strong>Labels:</strong> ["Tháng 1", "Tháng 2", ...]</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="font-medium text-gray-700 dark:text-gray-300 mb-1">UI Response nên có:</div>
+                    <div class="bg-blue-50 dark:bg-blue-900/20 rounded p-3 text-sm text-gray-700 dark:text-gray-300">
+                      - Chart preview với animation<br>
+                      - Interactive tooltips khi hover<br>
+                      - Download/export options<br>
+                      - Responsive chart sizing
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <!-- Original Demo Section (unchanged) -->
       <div class="border-t-2 border-gray-200 dark:border-gray-700 pt-8 mt-8">

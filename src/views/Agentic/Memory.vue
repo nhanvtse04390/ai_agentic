@@ -12,12 +12,19 @@
           <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-3 animate-bounce">
             🧠 Memory: AI nhớ, FE khiến memory trở nên transparent
           </h2>
-          <img 
-            src="https://i.imgflip.com/8zwv5a.jpg" 
-            alt="meme memory" 
-            class="mx-auto rounded-xl w-80 max-w-full my-4 shadow-lg"
-            loading="lazy"
-          />
+          <div class="mx-auto w-80 max-w-full my-4">
+            <div class="bg-gradient-to-br from-yellow-100 to-orange-100 dark:from-yellow-900 dark:to-orange-900 rounded-xl p-6 shadow-lg border-2 border-yellow-300 dark:border-yellow-700">
+              <div class="text-center">
+                <div class="text-6xl mb-4">🧠💭</div>
+                <div class="text-lg font-bold text-gray-800 dark:text-gray-200 mb-2">
+                  AI: "Tôi nhớ được thông tin!"
+                </div>
+                <div class="text-base text-gray-600 dark:text-gray-400">
+                  Frontend: "Nhưng tôi mới làm cho nó transparent! 👁️"
+                </div>
+              </div>
+            </div>
+          </div>
           <p class="text-lg text-gray-700 dark:text-gray-300 mt-4 max-w-3xl mx-auto">
             AI có thể lưu short-term và long-term memory. Nhưng <span class="font-bold text-yellow-600 dark:text-yellow-400">Frontend Developer</span> mới là người quyết định cách hiển thị memory đó: chat history, personalization UI, và cách user có thể xem/clear memory một cách intuitive. 💭
           </p>
@@ -37,6 +44,336 @@
         </aside>
       </section>
       <!-- 🟡 Seminar Presentation Section End -->
+
+      <!-- 🔄 Comparison Section: AI without UI vs AI with UI -->
+      <section class="mb-8 bg-gradient-to-r from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-700 rounded-xl p-6 border-2 border-gray-300 dark:border-gray-600">
+        <h2 class="text-2xl font-bold text-center text-gray-900 dark:text-white mb-6">
+          ⚖️ So sánh: AI không có UI vs AI có UI
+        </h2>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <!-- AI không có UI -->
+          <div class="bg-red-50 dark:bg-red-900/20 rounded-lg p-6 border-2 border-red-300 dark:border-red-700">
+            <div class="flex items-center gap-2 mb-4">
+              <span class="text-2xl">❌</span>
+              <h3 class="text-xl font-bold text-red-700 dark:text-red-400">AI không có UI</h3>
+            </div>
+            <div class="bg-white dark:bg-gray-900 rounded p-4 font-mono text-sm mb-4 border border-red-200 dark:border-red-800">
+              <div class="text-gray-500 mb-2">// Hidden memory storage</div>
+              <div class="text-gray-800 dark:text-gray-300">
+                Memory: {<br>
+                &nbsp;&nbsp;"user_name": "John",<br>
+                &nbsp;&nbsp;"preference": "dark_mode"<br>
+                }<br>
+                <br>
+                // User không biết AI nhớ gì
+              </div>
+            </div>
+            <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+              <li class="flex items-start gap-2">
+                <span class="text-red-500">✗</span>
+                <span>Memory ẩn, user không biết AI nhớ gì</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-red-500">✗</span>
+                <span>Không thể xem, không thể xóa memory</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-red-500">✗</span>
+                <span>Không có personalization UI</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-red-500">✗</span>
+                <span>User cảm thấy không kiểm soát được</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- AI có UI (Frontend) -->
+          <div class="bg-green-50 dark:bg-green-900/20 rounded-lg p-6 border-2 border-green-300 dark:border-green-700">
+            <div class="flex items-center gap-2 mb-4">
+              <span class="text-2xl">✅</span>
+              <h3 class="text-xl font-bold text-green-700 dark:text-green-400">AI có UI (Frontend)</h3>
+            </div>
+            <div class="bg-white dark:bg-gray-900 rounded-lg p-4 mb-4 border border-green-200 dark:border-green-800">
+              <div class="space-y-3">
+                <div class="p-3 bg-yellow-50 dark:bg-yellow-900/30 rounded-lg border-l-4 border-yellow-500">
+                  <div class="text-xs font-medium text-yellow-600 dark:text-yellow-400 mb-1">Short-term Memory</div>
+                  <div class="text-sm text-gray-700 dark:text-gray-300">Session: 3 items</div>
+                </div>
+                <div class="p-3 bg-orange-50 dark:bg-orange-900/30 rounded-lg border-l-4 border-orange-500">
+                  <div class="text-xs font-medium text-orange-600 dark:text-orange-400 mb-1">Long-term Memory</div>
+                  <div class="text-sm text-gray-700 dark:text-gray-300">Saved: 5 items</div>
+                </div>
+                <div class="flex items-center gap-2 text-xs">
+                  <button class="px-3 py-1 bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400 rounded hover:bg-red-200 dark:hover:bg-red-900/50">
+                    Clear Memory
+                  </button>
+                </div>
+              </div>
+            </div>
+            <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+              <li class="flex items-start gap-2">
+                <span class="text-green-500">✓</span>
+                <span>Memory visible, user biết AI nhớ gì</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-green-500">✓</span>
+                <span>Có UI để xem, edit, xóa memory</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-green-500">✓</span>
+                <span>Personalization UI dựa trên memory</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-green-500">✓</span>
+                <span>User cảm thấy kiểm soát và transparent</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="mt-6 p-4 bg-yellow-50 dark:bg-yellow-900/20 rounded-lg border-l-4 border-yellow-500">
+          <p class="text-sm text-gray-700 dark:text-gray-300">
+            <strong class="text-yellow-700 dark:text-yellow-400">💡 Kết luận:</strong> 
+            Cùng một memory từ AI, nhưng Frontend Developer biến nó thành UI transparent, cho phép user xem và quản lý memory, 
+            và tạo ra personalization experience. Đây chính là giá trị mà Frontend mang lại!
+          </p>
+        </div>
+      </section>
+
+      <!-- 📚 Lý thuyết chi tiết về Memory -->
+      <section class="mb-8 bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8">
+        <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-3">
+          <span class="text-4xl">📚</span>
+          <span>Lý thuyết về Memory Layer</span>
+        </h2>
+
+        <div class="space-y-6">
+          <!-- Khái niệm -->
+          <div class="bg-yellow-50 dark:bg-yellow-900/20 rounded-lg p-6 border-l-4 border-yellow-500">
+            <h3 class="text-xl font-semibold text-yellow-900 dark:text-yellow-300 mb-3">
+              🎯 Khái niệm Memory Layer
+            </h3>
+            <p class="text-gray-700 dark:text-gray-300 mb-4">
+              <strong>Memory Layer</strong> là khả năng của AI để lưu trữ và sử dụng thông tin từ các interactions trước đó:
+            </p>
+            <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300 ml-4">
+              <li><strong>Short-term Memory:</strong> Lưu thông tin trong session hiện tại (mất khi refresh)</li>
+              <li><strong>Long-term Memory:</strong> Lưu thông tin persistent (localStorage, database)</li>
+              <li><strong>Context Retrieval:</strong> AI sử dụng memory để hiểu context và đưa ra responses phù hợp</li>
+              <li><strong>Memory Management:</strong> User có thể xem, edit, và xóa memory</li>
+            </ul>
+          </div>
+
+          <!-- Cách hoạt động -->
+          <div class="bg-orange-50 dark:bg-orange-900/20 rounded-lg p-6 border-l-4 border-orange-500">
+            <h3 class="text-xl font-semibold text-orange-900 dark:text-orange-300 mb-3">
+              ⚙️ Cách hoạt động
+            </h3>
+            <div class="space-y-4">
+              <div class="bg-white dark:bg-gray-900 rounded p-4">
+                <div class="font-semibold text-gray-900 dark:text-white mb-2">1. Information Extraction</div>
+                <p class="text-sm text-gray-700 dark:text-gray-300">
+                  AI phân tích conversation và extract thông tin quan trọng (preferences, facts, context).
+                </p>
+              </div>
+              <div class="bg-white dark:bg-gray-900 rounded p-4">
+                <div class="font-semibold text-gray-900 dark:text-white mb-2">2. Memory Storage</div>
+                <p class="text-sm text-gray-700 dark:text-gray-300">
+                  Lưu thông tin vào short-term (session) hoặc long-term (persistent) storage.
+                </p>
+              </div>
+              <div class="bg-white dark:bg-gray-900 rounded p-4">
+                <div class="font-semibold text-gray-900 dark:text-white mb-2">3. Context Building</div>
+                <p class="text-sm text-gray-700 dark:text-gray-300">
+                  Khi user chat, AI retrieve relevant memory để build context và đưa ra responses phù hợp.
+                </p>
+              </div>
+              <div class="bg-white dark:bg-gray-900 rounded p-4">
+                <div class="font-semibold text-gray-900 dark:text-white mb-2">4. Personalization</div>
+                <p class="text-sm text-gray-700 dark:text-gray-300">
+                  Frontend sử dụng memory để personalize UI: themes, preferences, recommendations.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Ứng dụng thực tế -->
+          <div class="bg-amber-50 dark:bg-amber-900/20 rounded-lg p-6 border-l-4 border-amber-500">
+            <h3 class="text-xl font-semibold text-amber-900 dark:text-amber-300 mb-3">
+              💡 Ứng dụng thực tế
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="bg-white dark:bg-gray-900 rounded p-4">
+                <div class="font-semibold text-amber-700 dark:text-amber-400 mb-2">Personal Assistants</div>
+                <p class="text-sm text-gray-700 dark:text-gray-300">
+                  Nhớ preferences, schedule, và habits của user để đưa ra suggestions phù hợp
+                </p>
+              </div>
+              <div class="bg-white dark:bg-gray-900 rounded p-4">
+                <div class="font-semibold text-amber-700 dark:text-amber-400 mb-2">E-commerce</div>
+                <p class="text-sm text-gray-700 dark:text-gray-300">
+                  Nhớ browsing history, cart items, và purchase history để recommend products
+                </p>
+              </div>
+              <div class="bg-white dark:bg-gray-900 rounded p-4">
+                <div class="font-semibold text-amber-700 dark:text-amber-400 mb-2">Learning Platforms</div>
+                <p class="text-sm text-gray-700 dark:text-gray-300">
+                  Nhớ progress, strengths, weaknesses để customize learning path
+                </p>
+              </div>
+              <div class="bg-white dark:bg-gray-900 rounded p-4">
+                <div class="font-semibold text-amber-700 dark:text-amber-400 mb-2">Settings & Preferences</div>
+                <p class="text-sm text-gray-700 dark:text-gray-300">
+                  Nhớ theme, language, notifications preferences để apply automatically
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 🎬 Kịch bản Test cụ thể -->
+      <section class="mb-8 bg-gradient-to-r from-yellow-50 to-orange-50 dark:from-yellow-900/20 dark:to-orange-900/20 rounded-xl p-8 border-2 border-yellow-200 dark:border-yellow-800">
+        <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6 flex items-center gap-3">
+          <span class="text-4xl">🎬</span>
+          <span>Kịch bản Test cụ thể</span>
+        </h2>
+
+        <div class="space-y-6">
+          <!-- Test Case 1 -->
+          <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow">
+            <div class="flex items-start gap-4 mb-4">
+              <div class="flex-shrink-0 w-10 h-10 bg-yellow-500 text-white rounded-full flex items-center justify-center font-bold">
+                1
+              </div>
+              <div class="flex-1">
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                  Test Case 1: Lưu User Preferences
+                </h3>
+                <div class="space-y-3">
+                  <div>
+                    <div class="font-medium text-gray-700 dark:text-gray-300 mb-1">Conversation Flow:</div>
+                    <div class="bg-gray-100 dark:bg-gray-700 rounded p-3 text-sm space-y-2">
+                      <div><strong>User:</strong> "Tôi thích dark mode và ngôn ngữ tiếng Việt"</div>
+                      <div><strong>AI:</strong> "Đã lưu preferences của bạn!"</div>
+                      <div><strong>User (sau 5 phút):</strong> "Bạn nhớ tôi thích gì không?"</div>
+                      <div><strong>AI:</strong> "Bạn thích dark mode và tiếng Việt"</div>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="font-medium text-gray-700 dark:text-gray-300 mb-1">Memory Storage mong đợi:</div>
+                    <div class="bg-yellow-50 dark:bg-yellow-900/20 rounded p-3 text-sm">
+                      <ul class="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-300">
+                        <li><strong>Short-term:</strong> Conversation context</li>
+                        <li><strong>Long-term:</strong> {theme: "dark", language: "vi"}</li>
+                        <li><strong>Retrieval:</strong> AI có thể recall khi user hỏi lại</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="font-medium text-gray-700 dark:text-gray-300 mb-1">UI Response nên có:</div>
+                    <div class="bg-blue-50 dark:bg-blue-900/20 rounded p-3 text-sm text-gray-700 dark:text-gray-300">
+                      - Memory panel hiển thị saved preferences<br>
+                      - Auto-apply theme và language<br>
+                      - "Clear memory" button để reset<br>
+                      - Visual indicator khi memory được sử dụng
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Test Case 2 -->
+          <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow">
+            <div class="flex items-start gap-4 mb-4">
+              <div class="flex-shrink-0 w-10 h-10 bg-orange-500 text-white rounded-full flex items-center justify-center font-bold">
+                2
+              </div>
+              <div class="flex-1">
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                  Test Case 2: Context Continuity
+                </h3>
+                <div class="space-y-3">
+                  <div>
+                    <div class="font-medium text-gray-700 dark:text-gray-300 mb-1">Conversation Flow:</div>
+                    <div class="bg-gray-100 dark:bg-gray-700 rounded p-3 text-sm space-y-2">
+                      <div><strong>User:</strong> "Tôi tên là Nam, 25 tuổi, làm developer"</div>
+                      <div><strong>AI:</strong> "Xin chào Nam! Bạn làm developer à?"</div>
+                      <div><strong>User (sau đó):</strong> "Bạn nhớ tôi làm nghề gì không?"</div>
+                      <div><strong>AI:</strong> "Bạn là developer, đúng không?"</div>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="font-medium text-gray-700 dark:text-gray-300 mb-1">Memory Storage mong đợi:</div>
+                    <div class="bg-orange-50 dark:bg-orange-900/20 rounded p-3 text-sm">
+                      <ul class="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-300">
+                        <li><strong>Key:</strong> user_name, user_age, user_profession</li>
+                        <li><strong>Value:</strong> "Nam", "25", "developer"</li>
+                        <li><strong>Type:</strong> Long-term (persistent across sessions)</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="font-medium text-gray-700 dark:text-gray-300 mb-1">UI Response nên có:</div>
+                    <div class="bg-blue-50 dark:bg-blue-900/20 rounded p-3 text-sm text-gray-700 dark:text-gray-300">
+                      - Chat history hiển thị context<br>
+                      - Memory panel show saved facts<br>
+                      - Personalization dựa trên memory<br>
+                      - Edit/delete individual memory items
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Test Case 3 -->
+          <div class="bg-white dark:bg-gray-800 rounded-lg p-6 shadow">
+            <div class="flex items-start gap-4 mb-4">
+              <div class="flex-shrink-0 w-10 h-10 bg-amber-500 text-white rounded-full flex items-center justify-center font-bold">
+                3
+              </div>
+              <div class="flex-1">
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                  Test Case 3: Session vs Persistent Memory
+                </h3>
+                <div class="space-y-3">
+                  <div>
+                    <div class="font-medium text-gray-700 dark:text-gray-300 mb-1">Test Scenario:</div>
+                    <div class="bg-gray-100 dark:bg-gray-700 rounded p-3 text-sm space-y-2">
+                      <div>1. User nói: "Hôm nay tôi đang làm project React" (session memory)</div>
+                      <div>2. User nói: "Tôi thích màu xanh" (long-term memory)</div>
+                      <div>3. Refresh page</div>
+                      <div>4. Check memory: session memory mất, long-term memory còn</div>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="font-medium text-gray-700 dark:text-gray-300 mb-1">Memory Behavior mong đợi:</div>
+                    <div class="bg-amber-50 dark:bg-amber-900/20 rounded p-3 text-sm">
+                      <ul class="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-300">
+                        <li><strong>Session Memory:</strong> Mất sau khi refresh</li>
+                        <li><strong>Long-term Memory:</strong> Vẫn còn sau refresh</li>
+                        <li><strong>UI:</strong> Hiển thị rõ ràng 2 loại memory</li>
+                        <li><strong>Control:</strong> User có thể clear từng loại riêng</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="font-medium text-gray-700 dark:text-gray-300 mb-1">UI Response nên có:</div>
+                    <div class="bg-blue-50 dark:bg-blue-900/20 rounded p-3 text-sm text-gray-700 dark:text-gray-300">
+                      - Separate sections cho session và long-term<br>
+                      - Visual distinction (màu sắc khác nhau)<br>
+                      - Clear buttons riêng cho từng loại<br>
+                      - Timestamp cho mỗi memory item
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <!-- Original Demo Section (unchanged) -->
       <div class="border-t-2 border-gray-200 dark:border-gray-700 pt-8 mt-8">

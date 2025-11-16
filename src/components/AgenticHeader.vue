@@ -97,6 +97,7 @@ const navItems = [
   { name: 'Tool Use', path: '/agentic/tool-use', emoji: '🔧' },
   { name: 'Memory', path: '/agentic/memory', emoji: '🧠' },
   { name: 'Collaboration', path: '/agentic/collaboration', emoji: '👥' },
+  { name: 'Prompt Engineering', path: '/agentic/prompt-engineering', emoji: '✍️' },
 ];
 
 const isActive = (path) => {
