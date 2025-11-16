@@ -1,34 +1,7 @@
-# 🚀 Hướng dẫn chạy lại Frontend và Backend
+# 🚀 Hướng dẫn chạy Frontend
 
-## ✅ Đã tắt tất cả process
+## 📋 Cách chạy Frontend:
 
-## 📋 Cách chạy lại:
-
-### 1. Backend (Terminal 1):
-```bash
-cd backend
-npm run dev
-```
-
-**Bạn sẽ thấy:**
-```
-============================================================
-🚀 Backend Server đang chạy tại http://localhost:8080
-📝 Environment: development
-🔑 OpenAI API Key: ✅ Đã cấu hình
-
-📌 Available Endpoints:
-   GET  http://localhost:8080/health - Health check
-   POST http://localhost:8080/api/ask - Gửi câu hỏi đến OpenAI
-   POST http://localhost:8080/api/ai - Endpoint cho frontend
-
-💡 Frontend URL: http://localhost:3000
-💡 Logs sẽ hiển thị ở đây khi có request từ frontend
-
-============================================================
-```
-
-### 2. Frontend (Terminal 2 - Terminal mới):
 ```bash
 npm run dev
 ```
@@ -39,26 +12,23 @@ npm run dev
 
 ### File `.env` (root):
 ```env
-VITE_API_BASE_URL=http://localhost:8080
+VITE_API_BASE_URL=https://your-backend-url.com
 BASE_URL=/
 ```
 
-### File `backend/.env`:
-```env
-PORT=8080
-NODE_ENV=development
-OPENAI_API_KEY=sk-your-actual-key-here
-```
+**Lưu ý:** 
+- Thay `https://your-backend-url.com` bằng URL backend thực tế của bạn (đã deploy trên Render hoặc Railway)
+- Nếu chạy backend local, dùng: `http://localhost:8080`
 
 ## 🐛 Debug:
 
-Nếu frontend vẫn gọi sai port, kiểm tra trong browser console (F12):
-- Bạn sẽ thấy: `🔗 Calling API URL: http://localhost:8080/api/ai`
-- Nếu thấy `localhost:3000` → Frontend chưa restart hoặc có file `.env.local`
+Nếu frontend không kết nối được backend, kiểm tra trong browser console (F12):
+- Bạn sẽ thấy: `🔗 Calling API URL: https://your-backend-url.com/api/ai`
+- Kiểm tra `VITE_API_BASE_URL` trong file `.env` đã đúng chưa
 
 ## 📝 Lưu ý:
 
-1. **Backend phải chạy trước** frontend
+1. **Backend đã được tách ra thành repository riêng**
 2. **Frontend cần restart** sau khi thay đổi `.env`
-3. **Logs backend** sẽ hiển thị trong terminal backend khi có request
+3. **Đảm bảo backend đã được deploy và đang chạy** trước khi test frontend
 
